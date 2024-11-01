@@ -1,6 +1,7 @@
 import os
 import shutil
 import subprocess
+from core.github_update import github_update  # Import de la fonction pour la mise à jour GitHub
 
 def setup_directories():
     project_dir = os.getcwd()
@@ -57,23 +58,12 @@ def initialize_agency():
     )
     print("Fonction supervise_agents créée dans General_Direction.")
 
-def deploy_to_github():
-    deploy_script_path = os.path.join("core", "deploy_to_github.sh")
-    if os.path.exists(deploy_script_path):
-        try:
-            # Exécute le script de déploiement sur GitHub
-            print("ok try github")
-            result = subprocess.run([deploy_script_path], check=True, capture_output=True, text=True)
-            print(result.stdout)
-        except subprocess.CalledProcessError as e:
-            print(f"Erreur lors du déploiement sur GitHub : {e.stderr}")
-    else:
-        print("Le script deploy_to_github.sh est introuvable dans le répertoire 'core'.")
-
 if __name__ == "__main__":
     setup_directories()
     set_executable_permissions()
     copy_agent_file()
     initialize_agency()
-    deploy_to_github()
-    print("Installation et déploiement sur GitHub terminés.")
+    
+    # Mise à jour du dépôt sur GitHub
+    github_update(commit_message="Mise à jour post-installation")
+    print("Installation et mise à jour du dépôt GitHub terminées.")
