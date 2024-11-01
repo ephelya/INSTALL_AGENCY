@@ -1,0 +1,14 @@
+# <function_name>.py
+# <metadatas>
+
+<imports>
+
+from <services_path>.<department>.<function_name> import <function_name>
+
+def <function_name>(<inputs>):
+    """
+    <description>
+    """
+    # TODO: Implement function logic here
+    <body>
+
