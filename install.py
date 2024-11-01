@@ -8,6 +8,7 @@ def setup_directories():
     os.makedirs(os.path.join(project_dir, "Departments/General_Direction/actions"), exist_ok=True)
     os.makedirs(os.path.join(project_dir, "Departments/General_Direction/resources"), exist_ok=True)
     os.makedirs(os.path.join(project_dir, "Departments/General_Direction/logs"), exist_ok=True)
+    os.makedirs(os.path.join(project_dir, "Departments/General_Direction/tests"), exist_ok=True)
 
     os.makedirs(os.path.join(project_dir, "Departments/AI_Department/actions"), exist_ok=True)
     os.makedirs(os.path.join(project_dir, "Departments/AI_Department/resources"), exist_ok=True)
@@ -19,7 +20,14 @@ def setup_directories():
     os.makedirs(os.path.join(project_dir, "Departments/Technology_Department/resources"), exist_ok=True)
     os.makedirs(os.path.join(project_dir, "Departments/Technology_Department/logs"), exist_ok=True)
     os.makedirs(os.path.join(project_dir, "Departments/Technology_Department/models"), exist_ok=True)
+    os.makedirs(os.path.join(project_dir, "Departments/Technology_Department/tests"), exist_ok=True)
 
+    os.makedirs(os.path.join(project_dir, "Departments/Project_Management_Department/actions"), exist_ok=True)
+    os.makedirs(os.path.join(project_dir, "Departments/Project_Management_Department/resources"), exist_ok=True)
+    os.makedirs(os.path.join(project_dir, "Departments/Project_Management_Department/logs"), exist_ok=True)
+    os.makedirs(os.path.join(project_dir, "Departments/Project_Management_Department/models"), exist_ok=True)
+    os.makedirs(os.path.join(project_dir, "Departments/Project_Management_Department/tests"), exist_ok=True)
+    
     os.makedirs(os.path.join(project_dir, "Documentation/rules"), exist_ok=True)
     os.makedirs(os.path.join(project_dir, "Documentation/scripts"), exist_ok=True)
     os.makedirs(os.path.join(project_dir, "Documentation/templates"), exist_ok=True)

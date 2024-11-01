@@ -3,7 +3,7 @@
 
 <imports>
 
-from <services_path>.<department>.<function_name> import <function_name>
+from <services_path>.<department>.actions.<function_name> import <function_name>
 
 def <function_name>(<inputs>):
     """
