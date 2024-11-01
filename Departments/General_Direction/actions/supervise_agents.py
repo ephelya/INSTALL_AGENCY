@@ -3,7 +3,7 @@
 
 import os
 
-from services.General_Direction.actions.supervise_agents import supervise_agents
+from Departments.General_Direction.actions.supervise_agents import supervise_agents
 
 def supervise_agents(agent_list):
     """

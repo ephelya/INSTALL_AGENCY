@@ -27,7 +27,7 @@ def setup_directories():
     os.makedirs(os.path.join(project_dir, "Departments/Project_Management_Department/logs"), exist_ok=True)
     os.makedirs(os.path.join(project_dir, "Departments/Project_Management_Department/models"), exist_ok=True)
     os.makedirs(os.path.join(project_dir, "Departments/Project_Management_Department/tests"), exist_ok=True)
-    
+
     os.makedirs(os.path.join(project_dir, "Documentation/rules"), exist_ok=True)
     os.makedirs(os.path.join(project_dir, "Documentation/scripts"), exist_ok=True)
     os.makedirs(os.path.join(project_dir, "Documentation/templates"), exist_ok=True)
@@ -57,7 +57,7 @@ def initialize_agency():
     agent.create_function(
         department="General_Direction",
         function_name="supervise_agents",
-        services_path="services",
+        services_path="Departments",
         metadatas="# Metadata: version=1.0, author='General_Direction'",
         imports="import os",
         inputs="agent_list",

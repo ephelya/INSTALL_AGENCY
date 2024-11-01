@@ -25,7 +25,7 @@ if __name__ == "__main__":
     agent.create_function(
         department="General_Direction",
         function_name="supervise_agents",
-        services_path="services",
+        services_path="Departments",
         metadatas="# Metadata: version=1.0, author='General_Direction'",
         imports="import os",
         inputs="agent_list",
