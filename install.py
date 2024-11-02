@@ -85,10 +85,16 @@ def setup_directories():
     project_dir = os.getcwd()
     # Définition des départements et services nécessaires pour l'installation
     departments = {
-        "General_Direction": ["management"],
-        "AI_Department": ["automation"],
-        "Technology_Department": ["database_management", "deployment"],
-        "Project_Management_Department": ["initialization"]
+        "General_Direction": ["organizational_management"],
+        "AI_Department": ["model_create"],
+        "Technology_Department": ["database_management", "devops", "architecture", "automation", "backend_development", "frontend_development", "message_management", "optimization", "production", "security", "test", "backups" ],
+        "Project_Management_Department": ["project_management", "client_management"],
+        "Customer_Service_Department" : ["user_support", "account_management"],
+        "Audit_Department" : ["audit_compliance", "ethical_audit", "performance_audit", "security_audit"],
+        "Finance_Department" : ["comptability"],
+        "Innovation_Department" : ["innovation_training", "innovation_lab"],
+        "Marketing_Department" : ["communication", "content_writing", "design", "public_relations", "social_networks"],
+        "Monitoring_Department" : ["competitive_monitoring", "legal_research", "log_management", "marketing_trends", "security_compliance", "technology_trends"],
     }
 
     # Création des départements et des services avec leurs répertoires de base
