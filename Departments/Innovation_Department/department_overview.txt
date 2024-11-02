@@ -1,0 +1,18 @@
+Department: Innovation Management
+Role: Le département Innovation Management gère les idées, expérimente des technologies émergentes et crée des prototypes.
+
+Services:
+- manage_ideas.py
+  Role: Gère la collecte, l'organisation et la priorisation des idées d'innovation.
+  Input: {"idea_description": "text", "idea_source": "string"}
+  Output: {"idea_id": "integer", "status": "string"}
+
+- create_prototype.py
+  Role: Crée des prototypes pour tester de nouvelles fonctionnalités ou services.
+  Input: {"project_id": "integer", "prototype_type": "string"}
+  Output: {"prototype_id": "integer", "prototype_status": "string"}
+
+- technology_scouting.py
+  Role: Surveille les technologies émergentes et évalue leur potentiel pour l'entreprise.
+  Input: {"tech_name": "string", "market_analysis": "text"}
+  Output: {"tech_score": "integer", "recommendation": "text"}

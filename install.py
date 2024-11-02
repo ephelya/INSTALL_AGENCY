@@ -79,36 +79,39 @@ def setup_local_database():
         print(f"Erreur lors de la création de la base de données : {e}")
 
 def setup_directories():
+    """
+    Crée la structure de base des départements et des services essentiels pour l'installation initiale.
+    """
     project_dir = os.getcwd()
-    os.makedirs(os.path.join(project_dir, "Departments/General_Direction/actions"), exist_ok=True)
-    os.makedirs(os.path.join(project_dir, "Departments/General_Direction/resources"), exist_ok=True)
-    os.makedirs(os.path.join(project_dir, "Departments/General_Direction/logs"), exist_ok=True)
-    os.makedirs(os.path.join(project_dir, "Departments/General_Direction/tests"), exist_ok=True)
+    # Définition des départements et services nécessaires pour l'installation
+    departments = {
+        "General_Direction": ["management"],
+        "AI_Department": ["automation"],
+        "Technology_Department": ["database_management", "deployment"],
+        "Project_Management_Department": ["initialization"]
+    }
 
-    os.makedirs(os.path.join(project_dir, "Departments/AI_Department/actions"), exist_ok=True)
-    os.makedirs(os.path.join(project_dir, "Departments/AI_Department/resources"), exist_ok=True)
-    os.makedirs(os.path.join(project_dir, "Departments/AI_Department/logs"), exist_ok=True)
-    os.makedirs(os.path.join(project_dir, "Departments/AI_Department/models"), exist_ok=True)
-    os.makedirs(os.path.join(project_dir, "Departments/AI_Department/tests"), exist_ok=True)
+    # Création des départements et des services avec leurs répertoires de base
+    for department, services in departments.items():
+        base_path = os.path.join(project_dir, "Departments", department)
+        os.makedirs(base_path, exist_ok=True)
+        
+        for service in services:
+            service_path = os.path.join(base_path, service)
+            os.makedirs(service_path, exist_ok=True)
+            os.makedirs(os.path.join(service_path, "actions"), exist_ok=True)
+            os.makedirs(os.path.join(service_path, "resources"), exist_ok=True)
+            os.makedirs(os.path.join(service_path, "logs"), exist_ok=True)
+            os.makedirs(os.path.join(service_path, "tests"), exist_ok=True)
 
-    os.makedirs(os.path.join(project_dir, "Departments/Technology_Department/actions"), exist_ok=True)
-    os.makedirs(os.path.join(project_dir, "Departments/Technology_Department/resources"), exist_ok=True)
-    os.makedirs(os.path.join(project_dir, "Departments/Technology_Department/logs"), exist_ok=True)
-    os.makedirs(os.path.join(project_dir, "Departments/Technology_Department/models"), exist_ok=True)
-    os.makedirs(os.path.join(project_dir, "Departments/Technology_Department/tests"), exist_ok=True)
-
-    os.makedirs(os.path.join(project_dir, "Departments/Project_Management_Department/actions"), exist_ok=True)
-    os.makedirs(os.path.join(project_dir, "Departments/Project_Management_Department/resources"), exist_ok=True)
-    os.makedirs(os.path.join(project_dir, "Departments/Project_Management_Department/logs"), exist_ok=True)
-    os.makedirs(os.path.join(project_dir, "Departments/Project_Management_Department/models"), exist_ok=True)
-    os.makedirs(os.path.join(project_dir, "Departments/Project_Management_Department/tests"), exist_ok=True)
-
+    # Création des répertoires de documentation et de templates
     os.makedirs(os.path.join(project_dir, "Documentation/rules"), exist_ok=True)
     os.makedirs(os.path.join(project_dir, "Documentation/scripts"), exist_ok=True)
     os.makedirs(os.path.join(project_dir, "Documentation/templates"), exist_ok=True)
     os.makedirs(os.path.join(project_dir, "Templates"), exist_ok=True)
     os.makedirs(os.path.join(project_dir, "core"), exist_ok=True)
-    print("Structure de répertoires créée.")
+    
+    print("Structure de répertoires essentielle pour l'installation initiale créée.")
 
 def set_executable_permissions():
     deploy_script_path = os.path.join("core", "deploy_to_github.sh")
