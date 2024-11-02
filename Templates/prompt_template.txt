@@ -1,0 +1,17 @@
+# <metadatas>
+
+<context>
+
+<agent_role>
+
+<agent_persona>
+
+<user_persona>
+
+<agent_mission>
+
+<prompt>
+
+<style>
+
+<expected_format>

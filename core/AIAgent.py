@@ -4,7 +4,7 @@ class AIAgent:
     def __init__(self):
         print("Agent IA initialisé pour la création de fonctions")
 
-    def create_function(self, department, function_name, services_path, metadatas, imports, inputs, description, body=""):
+    def create_function(self, department, function_name, services_path, file_type, author, file_version, file_mission, imports, inputs_params, output_params, description, body=""):
         """
         Utilise generate_function_file pour créer un fichier de fonction dans le département spécifié.
         """
@@ -12,9 +12,13 @@ class AIAgent:
             department=department,
             function_name=function_name,
             services_path=services_path,
-            metadatas=metadatas,
+            file_type=file_type,
+            author=author,
+            file_version=file_version,
+            file_mission=file_mission,
             imports=imports,
-            inputs=inputs,
+            inputs_params=inputs_params,
+            output_params=output_params,
             description=description,
             body=body
         )
@@ -26,9 +30,13 @@ if __name__ == "__main__":
         department="General_Direction",
         function_name="supervise_agents",
         services_path="Departments",
-        metadatas="# Metadata: version=1.0, author='General_Direction'",
-        imports="import os",
-        inputs="agent_list",
-        description="Supervise la liste des agents.",
+        file_type="action",
+        author="General_Direction",
+        file_version="1.0",
+        file_mission="Supervise la liste des agents",
+        imports=["os"],
+        inputs_params=["agent_list"],
+        output_params=["status"],
+        description="Supervise la liste des agents et renvoie leur statut.",
         body="# Code de supervision des agents"
     )

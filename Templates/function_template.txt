@@ -1,9 +1,10 @@
 # <function_name>.py
-# <metadatas>
+<metadatas>
 
 <imports>
 
-from <services_path>.<department>.actions.<function_name> import <function_name>
+# Exemple d'import pour les fonctions utilisées dans ce module
+# from <services_path>.<department>.actions.<another_function_name> import <another_function_name>
 
 def <function_name>(<inputs>):
     """
@@ -11,4 +12,3 @@ def <function_name>(<inputs>):
     """
     # TODO: Implement function logic here
     <body>
-
